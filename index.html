@@ -1,13 +1,44 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>The Other Roles役割解説</title>
-        <link rel="stylesheet" href="./bulma.min.css">
-    </head>
-    <body>
-        <main class="container">
-            <button class="button　is-primary">テスト</button>
-        </main>
-    </body>
+
+<head>
+  <meta charset="UTF-8">
+  <title>The Other Roles役割解説</title>
+  <script src="./index.js"></script>
+  <link rel="stylesheet" href="./bulma.min.css">
+</head>
+
+<body class="is-size-1-mobile">
+  <header class="columns mb-6 mt-2">
+    <a href="https://github.com/Eisbison/TheOtherRoles" class="container is-fluid has-text-centered">
+      <img src="image/TOR_logo.png">
+    </a>
+  </header>
+  <main class="container is-max-desktop">
+    <div class="panel">
+      <p class="panel-heading">
+        各種ロール一覧
+      </p>
+      <div class="tabs is-centered is-boxed is-toggle is-marginless columns">
+        <ul>
+          <li class="is-active column is-one-fifth is-paddingless"><a onclick="changeCategory(this)">All</a></li>
+          <li class=" column is-one-fifth is-paddingless"><a onclick="changeCategory(this)">Crewmate</a></li>
+          <li class=" column is-one-fifth is-paddingless"><a onclick="changeCategory(this)">Impostor</a></li>
+          <li class=" column is-one-fifth is-paddingless"><a onclick="changeCategory(this)">Neutral</a></li>
+          <li class=" column is-one-fifth is-paddingless"><a onclick="changeCategory(this)">Secondary</a></li>
+        </ul>
+      </div>
+      <a class="panel-block button is-primary">
+        test
+      </a>
+      <a class="panel-block">
+        test
+      </a>
+      <a class="panel-block">
+        test
+      </a>
+    </div>
+  </main>
+</body>
+
 </html>
