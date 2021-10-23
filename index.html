@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>The Other Roles役割解説</title>
+  <title>The Other Rolesロール解説</title>
   <script src="./index.js"></script>
   <link rel="stylesheet" href="./bulma.min.css">
 </head>
@@ -11,34 +11,831 @@
 <body class="is-size-1-mobile">
   <header class="columns mb-6 mt-2">
     <a href="https://github.com/Eisbison/TheOtherRoles" class="container is-fluid has-text-centered">
-      <img src="image/TOR_logo.png">
+      <img src="./TOR_logo.png">
     </a>
   </header>
-  <main class="container is-max-desktop">
+  <main class="container is-max-desktop" style="min-height: 95vh;">
     <div class="panel">
+      <p class="panel-heading">
+        勝利条件の優先順位
+      </p>
+      <ol class="content column is-11 pl-6">
+        <li>
+          <a class="panel-block">クルーメイトミニが投票で追放される(全員敗北)</a>
+        </li>
+        <li>
+          <a class="panel-block">ジェスターが投票で追放される(ジェスターソロ勝利)</a>
+        </li>
+        <li>
+          <a class="panel-block">放火魔が全員に放火達成(放火魔ソロ勝利)</a>
+        </li>
+        <li>
+          <a class="panel-block">インポスターがサボタージュで勝利</a>
+        </li>
+        <li>
+          <a class="panel-block">クルーがタスクで勝利</a>
+        </li>
+        <li>
+          <a class="panel-block">最後の3人になり、恋人が2人生存している(恋人勝利)</a>
+        </li>
+        <li>
+          <a class="panel-block">ジャッカルが他のプレイヤーを排除して勝利(ジャッカル陣営に恋人が含まれていない)</a>
+        </li>
+        <li>
+          <a class="panel-block">インポスターが他のプレイヤーを排除して勝利(インポスター陣営に恋人が含まれていない)</a>
+        </li>
+        <li>
+          <a class="panel-block">インポスターが他のプレイヤーを排除して勝利(インポスター陣営に恋人が含まれていない)</a>
+        </li>
+        <li>
+          <a class="panel-block">投票以外の理由でクルーだけが生き残った</a>
+        </li>
+      </ol>
+    </div>
+    <div class="panel" id="list">
       <p class="panel-heading">
         各種ロール一覧
       </p>
       <div class="tabs is-centered is-boxed is-toggle is-marginless columns">
         <ul>
-          <li class="is-active column is-one-fifth is-paddingless"><a onclick="changeCategory(this)">All</a></li>
-          <li class=" column is-one-fifth is-paddingless"><a onclick="changeCategory(this)">Crewmate</a></li>
-          <li class=" column is-one-fifth is-paddingless"><a onclick="changeCategory(this)">Impostor</a></li>
-          <li class=" column is-one-fifth is-paddingless"><a onclick="changeCategory(this)">Neutral</a></li>
-          <li class=" column is-one-fifth is-paddingless"><a onclick="changeCategory(this)">Secondary</a></li>
+          <li class="is-active column is-one-fifth is-paddingless">
+            <a onclick="changeCategory(this)" id="all">All</a>
+          </li>
+          <li class=" column is-one-fifth is-paddingless">
+            <a onclick="changeCategory(this)" id="crewmate">Crewmate</a>
+          </li>
+          <li class=" column is-one-fifth is-paddingless">
+            <a onclick="changeCategory(this)" id="impostor">Impostor</a>
+          </li>
+          <li class=" column is-one-fifth is-paddingless">
+            <a onclick="changeCategory(this)" id="neutral">Neutral</a>
+          </li>
+          <li class=" column is-one-fifth is-paddingless">
+            <a onclick="changeCategory(this)" id="secondary">Secondary</a>
+          </li>
         </ul>
       </div>
-      <a class="panel-block button is-primary">
-        test
+      <a class="panel-block is-paddingless crewmate impostor column is-multiline mt-1"
+        onclick="changeCardVisible(this)">
+        <input readonly class="button is-fullwidth has-text-left has-text-white column is-full" value="Mini(ミニ)"
+          style="background:linear-gradient(90deg, hsl(204, 86%, 53%), hsl(348, 86%, 43%)); border: 0px;">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag is-info">
+            Crewmate
+          </span>
+          <span class="tag has-background-danger-dark has-text-white">
+            Impostor
+          </span>
+          <div class="card-content">
+            <p>
+              ミニは、67%の確率でクルー、33%の確率でインポスターになります。<br>
+              ミニはゲーム開始時、小さい姿で開始します。この姿はほかのプレイヤーからも小さく見えます。<br>
+              時間経過で0歳から18歳まで成長します。<br>
+              <br>
+            <h6 class="has-text-info">ミニがクルーの場合</h6>
+            <p>
+              0歳から17歳の間は攻撃されません。<br>
+              成長途中で吊られると、全員が敗北になります。<br>
+              <br>
+            </p>
+            <h6 class="has-text-danger-dark">ミニがインポスターの場合</h6>
+            <p>
+              0歳から17歳の間はキルクールが2倍になり、18歳になると3分の2になります。<br>
+              成長途中で吊っても問題ありません。<br>
+            </p>
+            <hr>
+            <div class="content is-marginless">
+              <ul class="has-text-weight-light">
+                <li>ミニは18歳になるまでインポスターやシェリフに攻撃されません。</li>
+                <li>どの程度の速さで成長するかは設定によります。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </a>
-      <a class="panel-block">
-        test
+      <a class="panel-block is-paddingless crewmate impostor column is-multiline" onclick="changeCardVisible(this)">
+        <input readonly class="button is-info is-fullwidth has-text-left has-text-white column is-full"
+          value="Guesser(ゲッサー)" style="background:linear-gradient(90deg, hsl(204, 86%, 53%), hsl(348, 86%, 43%));
+          border: 0px;">
+        </input>
+        <div class=" card column is-full" style="display: none;">
+          <span class="tag is-info">
+            Crewmate
+          </span>
+          <span class="tag has-background-danger-dark has-text-white">
+            Impostor
+          </span>
+          <div class="card-content">
+            <p>
+              ゲッサーはクルーにもインポスターにも設定可能です。<br>
+              会議中にターゲットアイコンをクリックするとそのプレイヤーの役職を選択できます。<br>
+              選択した役職が正しかった場合、対象のプレイヤーは死亡します。<br>
+              役職が間違っていた場合、自分が死にます。<br>
+            </p>
+            <hr>
+            <div class="content is-marginless">
+              <ul class="has-text-weight-light">
+                <li>ゲッサーの推測が当たっていた場合、死亡したプレイヤーは投票できません。</li>
+                <li>クルーのミニはぱっと見で分かるため役職を推測できません。</li>
+                <li>役職の推測として恋人を選ぶことはできません。</li>
+                <li>ジェスターがゲッサーに殺された場合、ジェスターは勝てません。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </a>
-      <a class="panel-block">
-        test
+      <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly class="button is-fullwidth has-text-left is-info column is-full" value="Detective(探偵)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag is-info">
+            Crewmate
+          </span>
+          <div class="card-content">
+            <p>
+              探偵はほかのプレイヤーの足跡を見ることができます。<br>
+              探偵が死体を発見し、レポートする時に犯人の手がかりを入手できます。<br>
+              手がかりは時間経過により変動し、犯人の名前と色を知ることができます。<br>
+            </p>
+            <hr>
+            <div class="content is-marginless">
+              <ul class="has-text-weight-light">
+                <li>モーフリングやカモフラージャーは見た目を変えている間、足跡の色も変わります。</li>
+                <li>ベントを使用しているプレイヤーの足跡は見えません。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly class="button is-fullwidth has-text-left is-info column is-full" value="Engineer(エンジニア)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag is-info">
+            Crewmate
+          </span>
+          <div class="card-content">
+            <p>
+              エンジニアは1ゲームに1度、緊急サボタージュを即座に解除できます。<br>
+              エンジニアはベントを使用でき、使用中のベントはインポスター陣営から青く見えます。<br>
+            </p>
+            <hr>
+            <div class="content is-marginless">
+              <ul class="has-text-weight-light">
+                <li>エンジニアはベントに入っていてもキルされます。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly class="button is-fullwidth has-text-left is-info column is-full" value="Hacker(ハッカー)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag is-info">
+            Crewmate
+          </span>
+          <div class="card-content">
+            <p>
+              ハッカーはハッカーモードを使用でき、使用中はアドミンとバイタルからより多くの情報を入手できます。<br>
+              ハッカーモードを使用していない場合は、通常のプレイヤーと同じ情報を入手できます。<br>
+              アドミン：ユーザーアイコンがそれぞれのキャラクターカラーになります。<br>
+              バイタル：死んだプレイヤーが死後何秒経過しているかが表示されます。<br>
+            </p>
+            <hr>
+            <div class="content is-marginless">
+              <ul class="has-text-weight-light">
+                <li>モーフリングや、カモフラージャーが色を変えている場合、アドミンでは変化後の色が表示されます。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly class="button is-fullwidth has-text-left is-info column is-full" value="Lighter(ライター)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag is-info">
+            Crewmate
+          </span>
+          <div class="card-content">
+            <p>
+              ライターがライターモードを有効にすると、視界が広くなります。<br>
+              停電時もライターモードを使用することで視界が広くなります。<br>
+            </p>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly class="button is-fullwidth has-text-left is-info column is-full" value="Mayor(メイヤー)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag is-info">
+            Crewmate
+          </span>
+          <div class="card-content">
+            <p>
+              メイヤーは1回の投票で2票分投票できます。<br>
+            </p>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly class="button is-fullwidth has-text-left is-info column is-full" value="Medic(メディック)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag is-info">
+            Crewmate
+          </span>
+          <div class="card-content">
+            <p>
+              メディックはプレイヤー1人にシールドを張ることができ、そのプレイヤーは殺されなくなります。<br>
+              メディックが死んだ場合、シールドは消えます。<br>
+              また、メディックが死体を発見し、レポートする場合、いつ死んだのかが分かります。<br>
+              オプション設定によっては、シールドを持っているプレイヤーが攻撃された場合、画面が赤く点滅します。<br>
+            </p>
+            <hr>
+            <div class="content is-marginless">
+              <ul class="has-text-weight-light">
+                <li>シェリフがシールドされているプレイヤーを攻撃した場合、何も起こりません。</li>
+                <li>シフターにシールドがあるか、相手にシールドがある場合、シールドも一緒に入れ替わります。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly class="button is-fullwidth has-text-left is-info column is-full"
+          value="Security Guard(セキュリティガード)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag is-info">
+            Crewmate
+          </span>
+          <div class="card-content">
+            <p>
+              セキュリティガードはベントを封鎖したり、新しいカメラを設置できます。<br>
+              ベントを封鎖したり、カメラを設置するにはネジが必要になります。<br>
+              新しく設置されたカメラは、会議の後に表示され、使用できるようになります。<br>
+              ベントも会議の後に封鎖されます。封鎖されたベントは出入りできませんが、別のベントから封鎖されたベントへ移動することはできます。<br>
+            </p>
+            <hr>
+            <div class="content is-marginless">
+              <ul class="has-text-weight-light">
+                <li>トリックスターボックスは封鎖できません。</li>
+                <li>MiraHQにカメラは設置できません。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly class="button is-fullwidth has-text-left is-info column is-full" value="Seer(シア)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag is-info">
+            Crewmate
+          </span>
+          <div class="card-content">
+            <p>
+              どこかでプレイヤーが死亡した場合、シアの画面が青く点滅します。<br>
+              オプション設定によって、死者の魂が一定時間見えるようになります。<br>
+            </p>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly class="button is-fullwidth has-text-left is-info column is-full" value="Sheriff(シェリフ)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag is-info">
+            Crewmate
+          </span>
+          <div class="card-content">
+            <p>
+              シェリフはインポスター陣営のプレイヤーをキルすることができます。<br>
+              オプション設定によって、ニュートラル陣営のプレイヤーもキルできるようになります。<br>
+              シェリフがクルー陣営を攻撃した場合、自分が死にます。<br>
+            </p>
+            <hr>
+            <div class="content is-marginless">
+              <ul class="has-text-weight-light">
+                <li>シェリフがシールドされているプレイヤーを攻撃した場合、何も起こりません。</li>
+                <li>シェリフがインポスターミニを攻撃する場合、成長途中であればシェリフが、18歳になっていればインポスターミニが死亡します。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly class="button is-fullwidth has-text-left is-info column is-full" value="Shifter(シフター)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag is-info">
+            Crewmate
+          </span>
+          <div class="card-content">
+            <p>
+              シフターはほかのプレイヤーの役職を交換でき、相手プレイヤーはクルーになります。<br>
+              役職の反映は、会議の直後に行われます。シフターやターゲットがキルや投票された場合も役職は交換されます。<br>
+              シフターがインポスターやニュートラル陣営をターゲットにした場合、会議の直後にシフターが死亡します。死体は残りません。<br>
+            </p>
+            <hr>
+            <div class="content is-marginless">
+              <ul class="has-text-weight-light">
+                <li>シフターの能力はイレイサーの能力の前に実行されます。</li>
+                <li>ゲーム中1度しか使えない能力の場合、シフターが役職を交換しても使用済みであれば使えません。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly class="button is-fullwidth has-text-left is-info column is-full" value="Snitch(スニッチ)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag is-info">
+            Crewmate
+          </span>
+          <div class="card-content">
+            <p>
+              スニッチは全てのタスクを完了すると、インポスターの位置を示す矢印が表示されます。<br>
+              オプション設定によって、ニュートラルの位置も表示できます。<br>
+              オプション設定によって、スニッチの残タスク数が少なくなると、インポスターにスニッチの位置を示す矢印が表示されます。<br>
+            </p>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly class="button is-fullwidth has-text-left is-info column is-full" value="Spy(スパイ)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag is-info">
+            Crewmate
+          </span>
+          <div class="card-content">
+            <p>
+              スパイはクルー陣営で、特別な能力はありません。<br>
+              スパイはインポスターからインポスターであるように見えます。<br>
+              オプション設定によって、以下の2パターンの設定が可能です。<br>
+              ・インポスターはスパイを殺すことができない。<br>
+              ・インポスターはスパイを殺せるが、インポスターも殺せる。<br>
+            </p>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly class="button is-fullwidth has-text-left is-info column is-full" value="Swapper(スワッパー)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag is-info">
+            Crewmate
+          </span>
+          <div class="card-content">
+            <p>
+              スワッパーは、投票後に2人のプレイヤーを選択し、互いの票を入れ替えることができます。<br>
+              スワッパーは停電と通信障害を修理できません。<br>
+              オプション設定によって、緊急ボタンを使用できるようになります。<br>
+            </p>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly class="button is-fullwidth has-text-left is-info column is-full" value="Time Master(タイムマスター)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag is-info">
+            Crewmate
+          </span>
+          <div class="card-content">
+            <p>
+              タイムマスターは、タイムシールドを設定できます。有効時間は設定により変動します。<br>
+              タイムシールドが有効な状態で攻撃を受けた場合、設定された時間だけ全員の移動が巻き戻ります。<br>
+              タイムマスターは巻き戻りの影響を受けません。<br>
+              タイムマスターを攻撃したプレイヤーのキルクールタイムはリセットされません。<br>
+            </p>
+            <hr>
+            <div class="content is-marginless">
+              <ul class="has-text-weight-light">
+                <li>吸血鬼に攻撃された場合、実際に死亡するタイミングでタイムシールドを張っていれば時間が巻き戻ります。</li>
+                <li>吸血鬼に攻撃され、直後に会議が始まった場合、タイムシールドの有効時間内であればタイムマスターは死にません。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly class="button is-fullwidth has-text-left is-info column is-full" value="Tracker(トラッカー)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag is-info">
+            Crewmate
+          </span>
+          <div class="card-content">
+            <p>
+              トラッカーは追跡するプレイヤーを1人選択できます。<br>
+              選択したプレイヤーの位置を示す矢印が表示されます。<br>
+              オプション設定によって、会議ごとに相手を選びなおすか、最後まで同じ相手を追跡するか設定できます。<br>
+            </p>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly class="button is-fullwidth has-text-left is-info column is-full" value="Bait(餌)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag is-info">
+            Crewmate
+          </span>
+          <div class="card-content">
+            <p>
+              餌が殺された場合、殺した相手にセルフレポートさせます。<br>
+              ベントに誰かが入っているかどうかが分かります。オプション設定により、正確に使用中のベントか、全体のベントが光るか設定できます。<br>
+            </p>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless impostor column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly
+          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark column is-full"
+          value="Bounty Hunter(バウンティハンター)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag has-background-danger-dark has-text-white">
+            Impostor
+          </span>
+          <div class="card-content">
+            <p>
+              バウンティハンターはランダムに選ばれたターゲットを殺害することで、キルクールタイムが劇的に短縮されます。<br>
+              ターゲットではないプレイヤーをキルした場合、通常よりキルクールタイムが長くなります。<br>
+              一定時間が経過すると、ターゲットは次のターゲットに代わります。<br>
+            </p>
+            <hr>
+            <div class="content is-marginless">
+              <ul class="has-text-weight-light">
+                <li>インポスターやスパイはターゲットには選ばれません。</li>
+                <li>ターゲットを殺すと次のターゲットが即座に選ばれます。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless impostor column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly
+          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark column is-full"
+          value="Comouflager(カモフラージャー)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag has-background-danger-dark has-text-white">
+            Impostor
+          </span>
+          <div class="card-content">
+            <p>
+              カモフラージャーはカモフラージュモードを使用できます。<br>
+              カモフラージュモードが有効な間、全てのプレイヤーは全く同一の見た目になります。<br>
+            </p>
+            <hr>
+            <div class="content is-marginless">
+              <ul class="has-text-weight-light">
+                <li>ミニも他のプレイヤーと同じ見た目になります。</li>
+                <li>トラッカーとスニッチの矢印は有効です。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless impostor column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly
+          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark column is-full"
+          value="Cleaner(クリーナー)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag has-background-danger-dark has-text-white">
+            Impostor
+          </span>
+          <div class="card-content">
+            <p>
+              クリーナーは、死体を掃除する能力があります。<br>
+            </p>
+            <hr>
+            <div class="content is-marginless">
+              <ul class="has-text-weight-light">
+                <li>キルと掃除は共有のクールタイムであるため、キル後すぐに死体を掃除することはできません。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless impostor column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly
+          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark column is-full"
+          value="Eraser(イレイサー)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag has-background-danger-dark has-text-white">
+            Impostor
+          </span>
+          <div class="card-content">
+            <p>
+              イレイサーは全てのプレイヤーの役職を消すことができます。<br>
+              対象となるプレイヤーは、会議後、プレイヤーが追放される直前に役職を失います。<br>
+              イレイサーは能力を使用するたびに、クールタイムが10秒伸びます。<br>
+              役職を消去したプレイヤーがその日に死んだ場合も、役職は消去されます。<br>
+              オプション設定によって、インポスター陣営の能力も消すことができます。<br>
+            </p>
+            <hr>
+            <div class="content is-marginless">
+              <ul class="has-text-weight-light">
+                <li>シフターの能力はイレイサーの能力の前に実行されます。</li>
+                <li>恋人を消去した場合、相方の恋人も自動的に消去されます。</li>
+                <li>役職の消去は追放の直前に行われるため、恋人を消去し、その日に追放した場合相方の恋人は自殺しません。</li>
+                <li>ジェスターの役職を消去し、その日に追放された場合、ジェスターは勝てません。</li>
+                <li>ジャッカルの役職を消去した場合、設定が有効な場合はサイドキックがジャッカルに昇進します。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless impostor column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly
+          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark column is-full"
+          value="Godfather(ゴッドファザー)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag has-background-danger-dark has-text-white">
+            Impostor
+          </span>
+          <div class="card-content">
+            <p>
+              ゴッドファザーはマフィア3人グループの1人です。<br>
+              通常のインポスターと同じ能力を持っています。<br>
+            </p>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless impostor column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly
+          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark column is-full"
+          value="Mafioso(マフィオソ)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag has-background-danger-dark has-text-white">
+            Impostor
+          </span>
+          <div class="card-content">
+            <p>
+              マフィオソはマフィア3人グループの1人です。<br>
+              マフィオソはゴッドファザーが死ぬまで殺されません。<br>
+            </p>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless impostor column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly
+          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark column is-full"
+          value="Janitor(ジャニター)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag has-background-danger-dark has-text-white">
+            Impostor
+          </span>
+          <div class="card-content">
+            <p>
+              ジャニターは殺害や妨害する能力はありません。<br>
+              ジャニターは死体を掃除することができます。<br>
+            </p>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless impostor column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly
+          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark column is-full"
+          value="Morphling(モーフリング)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag has-background-danger-dark has-text-white">
+            Impostor
+          </span>
+          <div class="card-content">
+            <p>
+              モーフリングは、プレイヤーの外観をスキャンし、クールタイム後に外観を模倣できます。<br>
+              足跡やアドミン情報に表示される色も変化します。<br>
+            </p>
+            <hr>
+            <div class="content is-marginless">
+              <ul class="has-text-weight-light">
+                <li>ミニを模倣すると、ミニと同じサイズになります。</li>
+                <li>模倣中も他のインポスターからは名前が赤く表示されます。</li>
+                <li>トラッカーとスニッチの矢印は機能し続けます。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless impostor column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly
+          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark column is-full"
+          value="Trickster(トリックスター)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag has-background-danger-dark has-text-white">
+            Impostor
+          </span>
+          <div class="card-content">
+            <p>
+              トリックスターは最初はほかのプレイヤーには見えないボックスを3つ設置できます。<br>
+              トリックスターが全てのボックスを設置すると、トリックスターだけが使用できるベントに変化します。<br>
+              3つの箱を設置した時点でほかのプレイヤーに見えるようになります。<br>
+              3つの箱を設置すると、ライトアウトの能力を使えるようになります。ライトアウトを使用すると、停電状態になりますが、時間経過でしか治りません。<br>
+            </p>
+            <hr>
+            <div class="content is-marginless">
+              <ul class="has-text-weight-light">
+                <li>ライトアウトが有効な間、トリックスターの画面下部にテキストが表示されます。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless impostor column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly
+          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark column is-full"
+          value="Vampire(吸血鬼)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag has-background-danger-dark has-text-white">
+            Impostor
+          </span>
+          <div class="card-content">
+            <p>
+              吸血鬼は他のプレイヤーを吸血できます。吸血されたプレイヤーは一定時間経過後に死亡します。<br>
+              吸血鬼の発生率が1%以上ある場合、全てのプレイヤーはにんにくを1つ設置できるようになります。<br>
+              オプション設定によって、吸血鬼はにんにくの周りでキルができなくなるか、吸血ができなくなるか設定できます。<br>
+            </p>
+            <hr>
+            <div class="content is-marginless">
+              <ul class="has-text-weight-light">
+                <li>吸血された後に生きたまま会議が始まった場合、会議の開始時に死亡します。</li>
+                <li>吸血鬼が存在する場合、ウォーロックは存在しません。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless impostor column is-multiline" onclick="changeCardVisible(this)">
+        <input readonly
+          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark column is-full"
+          value="Warlock(ウォーロック)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag has-background-danger-dark has-text-white">
+            Impostor
+          </span>
+          <div class="card-content">
+            <p>
+              ウォーロックは他のプレイヤーを呪うことができます。<br>
+              呪われた人がほかのプレイヤーの隣にいる場合、呪われた人の隣にいるプレイヤーをキルできます。<br>
+              ウォーロックが呪われた人を経由してキルした場合、呪いが解除され、ウォーロックは一定時間移動できなくなります。<br>
+            </p>
+            <hr>
+            <div class="content is-marginless">
+              <ul class="has-text-weight-light">
+                <li>ウォーロックの呪われた人を経由したキルは、自身を含むすべてのプレイヤーをキルできます。</li>
+                <li>キルと呪いは同じクールタイムを共有します。</li>
+                <li>ウォーロックが存在する場合、吸血鬼は存在しません。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless neutral column is-multiline" onclick="changeCardVisible(this)">
+        <input readonly
+          class="button is-fullwidth has-text-left has-text-white has-background-warning-dark column is-full"
+          value="Arsonist(放火魔)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag has-background-warning-dark has-text-white">
+            Neutral
+          </span>
+          <div class="card-content">
+            <p>
+              放火魔はタスクはありません。生きている全員に放火した場合に勝利できます。<br>
+              放火を行うには、他のプレイヤーの隣で放火ボタンを押し、数秒間とどまる必要があります。<br>
+              放火中に対象のプレイヤーが範囲外に移動した場合、放火のクールタイムが0にリセットされます。<br>
+            </p>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless neutral column is-multiline" onclick="changeCardVisible(this)">
+        <input readonly
+          class="button is-fullwidth has-text-left has-text-white has-background-warning-dark column is-full"
+          value="Jester(ジェスター)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag has-background-warning-dark has-text-white">
+            Neutral
+          </span>
+          <div class="card-content">
+            <p>
+              ジェスターはタスクはありません。会議中に投票で追放された場合に勝利できます。<br>
+            </p>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless neutral column is-multiline" onclick="changeCardVisible(this)">
+        <input readonly
+          class="button is-fullwidth has-text-left has-text-white has-background-warning-dark column is-full"
+          value="Jackal(ジャッカル)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag has-background-warning-dark has-text-white">
+            Neutral
+          </span>
+          <div class="card-content">
+            <p>
+              ジャッカルはタスクはありません。他のプレイヤーを全て排除することで勝利できます。<br>
+              オプションでサイドキックが有効な場合、別のプレイヤーをサイドキックに指定することで、選ばれたプレイヤーはサイドキックになり、ジャッカル陣営になります。<br>
+              サイドキックはその時点で以前の役職を失います。<br>
+              ジャッカルが存在する場合、以下のパターンが起こりうる可能性があります。<br>
+              ・インポスターが全滅し、ジャッカルとクルーで戦うことになる。<br>
+              ・クルーが全滅し、インポスターとジャッカルで戦うことになる。(この場合もクルーはタスク勝利を狙うことができる。)<br>
+            </p>
+            <hr>
+            <div class="content is-marginless">
+              <ul class="has-text-weight-light">
+                <li>ジャッカルはシェリフによって殺される可能性があります。</li>
+                <li>ジャッカルは成長途中のミニを攻撃できません。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless neutral column is-multiline" onclick="changeCardVisible(this)">
+        <input readonly
+          class="button is-fullwidth has-text-left has-text-white has-background-warning-dark column is-full"
+          value="Sidekick(サイドキック)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag has-background-warning-dark has-text-white">
+            Neutral
+          </span>
+          <div class="card-content">
+            <p>
+              サイドキックは、最初から割り当てられていることはなく、ゲーム中にジャッカルが能力を使用することで発生します。<br>
+              サイドキックになったプレイヤーは、ジャッカルチームになり、全てのプレイヤーを排除することで勝利できます。<br>
+              サイドキックはその時点で以前の役職を失います。<br>
+              ジャッカルが存在する場合、以下のパターンが起こりうる可能性があります。<br>
+              ・インポスターが全滅し、ジャッカルとクルーで戦うことになる。<br>
+              ・クルーが全滅し、インポスターとジャッカルで戦うことになる。(この場合もクルーはタスク勝利を狙うことができる。)<br>
+            </p>
+            <hr>
+            <div class="content is-marginless">
+              <ul class="has-text-weight-light">
+                <li>サイドキックはシェリフによって殺される可能性があります。</li>
+                <li>サイドキックになったプレイヤーは、恋人の役職を除いて以前の役職とタスクを失います。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless secondary column is-multiline" onclick="changeCardVisible(this)">
+        <input readonly
+          class="button is-fullwidth has-text-left has-text-white has-background-success-dark column is-full"
+          value="Lover(恋人)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag has-background-success-dark  has-text-white">
+            Secondary
+          </span>
+          <div class="card-content">
+            <p>
+              恋人は必ず2人1組で生成されます。恋人は二人とも最後まで生き残ることで勝利できます。<br>
+              オプション設定により、片方の恋人が死んだ場合、相方の恋人は自殺します。<br>
+              オプション設定により、恋人以外の役職を持てるようになります。<br>
+              恋人以外の役職がある場合、恋人同士は恋人であることしか分かりません。<br>
+              恋人以外の役職がある場合、その役職で勝利することも可能です。例えば、インポスターの場合はインポスターとして勝利できます。<br>
+              恋人の1人が殺人者(インポスター/ジャッカル)である場合、恋人だけが勝つ恋人ソロ勝利を達成できます。<br>
+
+            </p>
+            <hr>
+            <div class="content is-marginless">
+              <ul class="has-text-weight-light">
+                <li>2人のクルー対2人のインポスターで、恋人が同じチームにいない場合、恋人ソロ勝利が可能なため、ゲームは継続します。</li>
+                <li>シフターが恋人をターゲットにした場合、恋人が変わります。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </a>
     </div>
   </main>
 </body>
+
+<footer class="footer columns is-paddingless mt-5">
+  <a href="https://store.steampowered.com/app/945360/Among_Us/" class="container is-fluid has-text-centered">
+    <img src="./amongus.jpg">
+  </a>
+</footer>
 
 </html>
