@@ -16,7 +16,7 @@
   </header>
   <main class="container is-max-desktop is-size-1-mobile" style="min-height: 95vh;">
     <div class="panel">
-      <p class="panel-heading">
+      <p class="panel-heading is-size-1-mobile">
         勝利条件の優先順位
       </p>
       <ol class="content column is-11 pl-6">
@@ -56,26 +56,24 @@
       <p class="panel-heading">
         各種ロール一覧
       </p>
-      <div>
-        <div class="tabs is-centered is-boxed is-toggle is-marginless container is-fullhd">
-          <ul>
-            <li class="is-active column is-one-fifth is-paddingless">
-              <a onclick="changeCategory(this)" id="all">All</a>
-            </li>
-            <li class=" column is-one-fifth is-paddingless">
-              <a onclick="changeCategory(this)" id="crewmate">Crewmate</a>
-            </li>
-            <li class=" column is-one-fifth is-paddingless">
-              <a onclick="changeCategory(this)" id="impostor">Impostor</a>
-            </li>
-            <li class=" column is-one-fifth is-paddingless">
-              <a onclick="changeCategory(this)" id="neutral">Neutral</a>
-            </li>
-            <li class=" column is-one-fifth is-paddingless">
-              <a onclick="changeCategory(this)" id="secondary">Secondary</a>
-            </li>
-          </ul>
-        </div>
+      <div class="tabs is-centered is-boxed is-toggle is-marginless">
+        <ul>
+          <li class="is-active column is-one-fifth is-paddingless">
+            <a onclick="changeCategory(this)" id="all">All</a>
+          </li>
+          <li class=" column is-one-fifth is-paddingless">
+            <a onclick="changeCategory(this)" id="crewmate">Crewmate</a>
+          </li>
+          <li class=" column is-one-fifth is-paddingless">
+            <a onclick="changeCategory(this)" id="impostor">Impostor</a>
+          </li>
+          <li class=" column is-one-fifth is-paddingless">
+            <a onclick="changeCategory(this)" id="neutral">Neutral</a>
+          </li>
+          <li class=" column is-one-fifth is-paddingless">
+            <a onclick="changeCategory(this)" id="secondary">Secondary</a>
+          </li>
+        </ul>
       </div>
       <a class="panel-block is-paddingless crewmate impostor column is-multiline mt-1"
         onclick="changeCardVisible(this)">
