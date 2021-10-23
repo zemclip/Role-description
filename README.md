@@ -1,2 +1,2 @@
 # Role-description
-The Other Rolesの役割解説
+The Other Rolesの解説
