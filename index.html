@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="./bulma.min.css">
 </head>
 
-<body class="is-size-1-mobile">
+<body>
   <header class="columns mb-6 mt-2">
     <a href="https://github.com/Eisbison/TheOtherRoles" class="container is-fluid has-text-centered">
       <img src="./TOR_logo.png">
@@ -19,7 +19,7 @@
       <p class="panel-heading is-size-2-touch is-size-3-tablet is-size-4-desktop">
         勝利条件の優先順位
       </p>
-      <ol class="content column is-11 pl-6 is-size-3-touch">
+      <ol class="content column is-11 pl-6 is-size-3-touch is-size-4-tablet">
         <li>
           <a class="panel-block">クルーメイトミニが投票で追放される(全員敗北)</a>
         </li>
@@ -57,7 +57,7 @@
         各種ロール一覧
       </p>
       <div class="tabs is-centered is-boxed is-toggle is-marginless mb-1">
-        <ul class="is-size-3-touch">
+        <ul class="is-size-3-touch is-size-4-tablet">
           <li class="is-active column is-one-fifth is-paddingless">
             <a onclick="changeCategory(this)" id="all">All</a>
           </li>
@@ -76,7 +76,8 @@
         </ul>
       </div>
       <a class="panel-block is-paddingless crewmate impostor column is-multiline" onclick="changeCardVisible(this)">
-        <input readonly class="button is-fullwidth has-text-left has-text-white column is-full is-size-3-touch"
+        <input readonly
+          class="button is-fullwidth has-text-left has-text-white column is-full is-size-3-touch is-size-4-tablet"
           value="Mini(ミニ)"
           style="background:linear-gradient(90deg, hsl(204, 86%, 53%), hsl(348, 86%, 43%)); border: 0px;">
         </input>
@@ -87,7 +88,7 @@
           <span class="tag has-background-danger-dark has-text-white is-medium is-size-5-touch">
             Impostor
           </span>
-          <div class="card-content is-size-5-touch is-size-3-touch">
+          <div class="card-content is-size-5-touch is-size-3-touch is-size-4-tablet">
             <p>
               ミニは、67%の確率でクルー、33%の確率でインポスターになります。<br>
               ミニはゲーム開始時、小さい姿で開始します。この姿はほかのプレイヤーからも小さく見えます。<br>
@@ -115,7 +116,8 @@
         </div>
       </a>
       <a class="panel-block is-paddingless crewmate impostor column is-multiline" onclick="changeCardVisible(this)">
-        <input readonly class="button is-info is-fullwidth has-text-left has-text-white column is-full is-size-3-touch"
+        <input readonly
+          class="button is-info is-fullwidth has-text-left has-text-white column is-full is-size-3-touch is-size-4-tablet"
           value="Guesser(ゲッサー)" style="background:linear-gradient(90deg, hsl(204, 86%, 53%), hsl(348, 86%, 43%));
           border: 0px;">
         </input>
@@ -126,7 +128,7 @@
           <span class="tag has-background-danger-dark has-text-white is-medium is-size-5-touch">
             Impostor
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               ゲッサーはクルーにもインポスターにも設定可能です。<br>
               会議中にターゲットアイコンをクリックするとそのプレイヤーの役職を選択できます。<br>
@@ -146,14 +148,15 @@
         </div>
       </a>
       <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
-        <input readonly class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch"
+        <input readonly
+          class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch is-size-4-tablet"
           value="Detective(探偵)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag is-info is-medium is-size-5-touch">
             Crewmate
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               探偵はほかのプレイヤーの足跡を見ることができます。<br>
               探偵が死体を発見し、レポートする時に犯人の手がかりを入手できます。<br>
@@ -170,14 +173,15 @@
         </div>
       </a>
       <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
-        <input readonly class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch"
+        <input readonly
+          class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch is-size-4-tablet"
           value="Engineer(エンジニア)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag is-info is-medium is-size-5-touch">
             Crewmate
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               エンジニアは1ゲームに1度、緊急サボタージュを即座に解除できます。<br>
               エンジニアはベントを使用でき、使用中のベントはインポスター陣営から青く見えます。<br>
@@ -192,14 +196,15 @@
         </div>
       </a>
       <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
-        <input readonly class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch"
+        <input readonly
+          class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch is-size-4-tablet"
           value="Hacker(ハッカー)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag is-info is-medium is-size-5-touch">
             Crewmate
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               ハッカーはハッカーモードを使用でき、使用中はアドミンとバイタルからより多くの情報を入手できます。<br>
               ハッカーモードを使用していない場合は、通常のプレイヤーと同じ情報を入手できます。<br>
@@ -216,14 +221,15 @@
         </div>
       </a>
       <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
-        <input readonly class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch"
+        <input readonly
+          class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch is-size-4-tablet"
           value="Lighter(ライター)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag is-info is-medium is-size-5-touch">
             Crewmate
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               ライターがライターモードを有効にすると、視界が広くなります。<br>
               停電時もライターモードを使用することで視界が広くなります。<br>
@@ -232,14 +238,15 @@
         </div>
       </a>
       <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
-        <input readonly class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch"
+        <input readonly
+          class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch is-size-4-tablet"
           value="Mayor(メイヤー)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag is-info is-medium is-size-5-touch">
             Crewmate
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               メイヤーは1回の投票で2票分投票できます。<br>
             </p>
@@ -247,14 +254,15 @@
         </div>
       </a>
       <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
-        <input readonly class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch"
+        <input readonly
+          class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch is-size-4-tablet"
           value="Medic(メディック)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag is-info is-medium is-size-5-touch">
             Crewmate
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               メディックはプレイヤー1人にシールドを張ることができ、そのプレイヤーは殺されなくなります。<br>
               メディックが死んだ場合、シールドは消えます。<br>
@@ -272,14 +280,15 @@
         </div>
       </a>
       <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
-        <input readonly class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch"
+        <input readonly
+          class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch is-size-4-tablet"
           value="Security Guard(セキュリティガード)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag is-info is-medium is-size-5-touch">
             Crewmate
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               セキュリティガードはベントを封鎖したり、新しいカメラを設置できます。<br>
               ベントを封鎖したり、カメラを設置するにはネジが必要になります。<br>
@@ -297,14 +306,15 @@
         </div>
       </a>
       <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
-        <input readonly class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch"
+        <input readonly
+          class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch is-size-4-tablet"
           value="Seer(シア)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag is-info is-medium is-size-5-touch">
             Crewmate
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               どこかでプレイヤーが死亡した場合、シアの画面が青く点滅します。<br>
               オプション設定によって、死者の魂が一定時間見えるようになります。<br>
@@ -313,14 +323,15 @@
         </div>
       </a>
       <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
-        <input readonly class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch"
+        <input readonly
+          class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch is-size-4-tablet"
           value="Sheriff(シェリフ)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag is-info is-medium is-size-5-touch">
             Crewmate
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               シェリフはインポスター陣営のプレイヤーをキルすることができます。<br>
               オプション設定によって、ニュートラル陣営のプレイヤーもキルできるようになります。<br>
@@ -337,14 +348,15 @@
         </div>
       </a>
       <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
-        <input readonly class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch"
+        <input readonly
+          class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch is-size-4-tablet"
           value="Shifter(シフター)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag is-info is-medium is-size-5-touch">
             Crewmate
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               シフターはほかのプレイヤーの役職を交換でき、相手プレイヤーはクルーになります。<br>
               役職の反映は、会議の直後に行われます。シフターやターゲットがキルや投票された場合も役職は交換されます。<br>
@@ -361,14 +373,15 @@
         </div>
       </a>
       <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
-        <input readonly class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch"
+        <input readonly
+          class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch is-size-4-tablet"
           value="Snitch(スニッチ)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag is-info is-medium is-size-5-touch">
             Crewmate
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               スニッチは全てのタスクを完了すると、インポスターの位置を示す矢印が表示されます。<br>
               オプション設定によって、ニュートラルの位置も表示できます。<br>
@@ -378,14 +391,15 @@
         </div>
       </a>
       <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
-        <input readonly class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch"
+        <input readonly
+          class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch is-size-4-tablet"
           value="Spy(スパイ)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag is-info is-medium is-size-5-touch">
             Crewmate
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               スパイはクルー陣営で、特別な能力はありません。<br>
               スパイはインポスターからインポスターであるように見えます。<br>
@@ -397,14 +411,15 @@
         </div>
       </a>
       <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
-        <input readonly class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch"
+        <input readonly
+          class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch is-size-4-tablet"
           value="Swapper(スワッパー)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag is-info is-medium is-size-5-touch">
             Crewmate
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               スワッパーは、投票後に2人のプレイヤーを選択し、互いの票を入れ替えることができます。<br>
               スワッパーは停電と通信障害を修理できません。<br>
@@ -414,14 +429,15 @@
         </div>
       </a>
       <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
-        <input readonly class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch"
+        <input readonly
+          class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch is-size-4-tablet"
           value="Time Master(タイムマスター)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag is-info is-medium is-size-5-touch">
             Crewmate
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               タイムマスターは、タイムシールドを設定できます。有効時間は設定により変動します。<br>
               タイムシールドが有効な状態で攻撃を受けた場合、設定された時間だけ全員の移動が巻き戻ります。<br>
@@ -439,14 +455,15 @@
         </div>
       </a>
       <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
-        <input readonly class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch"
+        <input readonly
+          class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch is-size-4-tablet"
           value="Tracker(トラッカー)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag is-info is-medium is-size-5-touch">
             Crewmate
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               トラッカーは追跡するプレイヤーを1人選択できます。<br>
               選択したプレイヤーの位置を示す矢印が表示されます。<br>
@@ -456,14 +473,15 @@
         </div>
       </a>
       <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
-        <input readonly class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch"
+        <input readonly
+          class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch is-size-4-tablet"
           value="Bait(餌)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag is-info is-medium is-size-5-touch">
             Crewmate
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               餌が殺された場合、殺した相手にセルフレポートさせます。<br>
               ベントに誰かが入っているかどうかが分かります。オプション設定により、正確に使用中のベントか、全体のベントが光るか設定できます。<br>
@@ -473,14 +491,14 @@
       </a>
       <a class="panel-block is-paddingless impostor column is-multiline " onclick="changeCardVisible(this)">
         <input readonly
-          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark is-danger column is-full is-size-3-touch"
+          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark is-danger column is-full is-size-3-touch is-size-4-tablet"
           value="Bounty Hunter(バウンティハンター)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag has-background-danger-dark has-text-white is-medium is-size-5-touch">
             Impostor
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               バウンティハンターはランダムに選ばれたターゲットを殺害することで、キルクールタイムが劇的に短縮されます。<br>
               ターゲットではないプレイヤーをキルした場合、通常よりキルクールタイムが長くなります。<br>
@@ -498,14 +516,14 @@
       </a>
       <a class="panel-block is-paddingless impostor column is-multiline " onclick="changeCardVisible(this)">
         <input readonly
-          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark is-danger column is-full is-size-3-touch"
+          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark is-danger column is-full is-size-3-touch is-size-4-tablet"
           value="Comouflager(カモフラージャー)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag has-background-danger-dark has-text-white is-medium is-size-5-touch">
             Impostor
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               カモフラージャーはカモフラージュモードを使用できます。<br>
               カモフラージュモードが有効な間、全てのプレイヤーは全く同一の見た目になります。<br>
@@ -522,14 +540,14 @@
       </a>
       <a class="panel-block is-paddingless impostor column is-multiline " onclick="changeCardVisible(this)">
         <input readonly
-          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark is-danger column is-full is-size-3-touch"
+          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark is-danger column is-full is-size-3-touch is-size-4-tablet"
           value="Cleaner(クリーナー)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag has-background-danger-dark has-text-white is-medium is-size-5-touch">
             Impostor
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               クリーナーは、死体を掃除する能力があります。<br>
             </p>
@@ -544,14 +562,14 @@
       </a>
       <a class="panel-block is-paddingless impostor column is-multiline " onclick="changeCardVisible(this)">
         <input readonly
-          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark is-danger column is-full is-size-3-touch"
+          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark is-danger column is-full is-size-3-touch is-size-4-tablet"
           value="Eraser(イレイサー)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag has-background-danger-dark has-text-white is-medium is-size-5-touch">
             Impostor
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               イレイサーは全てのプレイヤーの役職を消すことができます。<br>
               対象となるプレイヤーは、会議後、プレイヤーが追放される直前に役職を失います。<br>
@@ -574,14 +592,14 @@
       </a>
       <a class="panel-block is-paddingless impostor column is-multiline " onclick="changeCardVisible(this)">
         <input readonly
-          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark is-danger column is-full is-size-3-touch"
+          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark is-danger column is-full is-size-3-touch is-size-4-tablet"
           value="Godfather(ゴッドファザー)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag has-background-danger-dark has-text-white is-medium is-size-5-touch">
             Impostor
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               ゴッドファザーはマフィア3人グループの1人です。<br>
               通常のインポスターと同じ能力を持っています。<br>
@@ -591,14 +609,14 @@
       </a>
       <a class="panel-block is-paddingless impostor column is-multiline " onclick="changeCardVisible(this)">
         <input readonly
-          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark is-danger column is-full is-size-3-touch"
+          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark is-danger column is-full is-size-3-touch is-size-4-tablet"
           value="Mafioso(マフィオソ)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag has-background-danger-dark has-text-white is-medium is-size-5-touch">
             Impostor
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               マフィオソはマフィア3人グループの1人です。<br>
               マフィオソはゴッドファザーが死ぬまで殺されません。<br>
@@ -608,14 +626,14 @@
       </a>
       <a class="panel-block is-paddingless impostor column is-multiline " onclick="changeCardVisible(this)">
         <input readonly
-          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark is-danger column is-full is-size-3-touch"
+          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark is-danger column is-full is-size-3-touch is-size-4-tablet"
           value="Janitor(ジャニター)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag has-background-danger-dark has-text-white is-medium is-size-5-touch">
             Impostor
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               ジャニターは殺害や妨害する能力はありません。<br>
               ジャニターは死体を掃除することができます。<br>
@@ -625,14 +643,14 @@
       </a>
       <a class="panel-block is-paddingless impostor column is-multiline " onclick="changeCardVisible(this)">
         <input readonly
-          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark is-danger column is-full is-size-3-touch"
+          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark is-danger column is-full is-size-3-touch is-size-4-tablet"
           value="Morphling(モーフリング)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag has-background-danger-dark has-text-white is-medium is-size-5-touch">
             Impostor
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               モーフリングは、プレイヤーの外観をスキャンし、クールタイム後に外観を模倣できます。<br>
               足跡やアドミン情報に表示される色も変化します。<br>
@@ -650,14 +668,14 @@
       </a>
       <a class="panel-block is-paddingless impostor column is-multiline " onclick="changeCardVisible(this)">
         <input readonly
-          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark is-danger column is-full is-size-3-touch"
+          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark is-danger column is-full is-size-3-touch is-size-4-tablet"
           value="Trickster(トリックスター)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag has-background-danger-dark has-text-white is-medium is-size-5-touch">
             Impostor
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               トリックスターは最初はほかのプレイヤーには見えないボックスを3つ設置できます。<br>
               トリックスターが全てのボックスを設置すると、トリックスターだけが使用できるベントに変化します。<br>
@@ -675,14 +693,14 @@
       </a>
       <a class="panel-block is-paddingless impostor column is-multiline " onclick="changeCardVisible(this)">
         <input readonly
-          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark is-danger column is-full is-size-3-touch"
+          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark is-danger column is-full is-size-3-touch is-size-4-tablet"
           value="Vampire(吸血鬼)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag has-background-danger-dark has-text-white is-medium is-size-5-touch">
             Impostor
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               吸血鬼は他のプレイヤーを吸血できます。吸血されたプレイヤーは一定時間経過後に死亡します。<br>
               吸血鬼の発生率が1%以上ある場合、全てのプレイヤーはにんにくを1つ設置できるようになります。<br>
@@ -700,14 +718,14 @@
       </a>
       <a class="panel-block is-paddingless impostor column is-multiline" onclick="changeCardVisible(this)">
         <input readonly
-          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark is-danger column is-full is-size-3-touch"
+          class="button is-fullwidth has-text-left has-text-white has-background-danger-dark is-danger column is-full is-size-3-touch is-size-4-tablet"
           value="Warlock(ウォーロック)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag has-background-danger-dark has-text-white is-medium is-size-5-touch">
             Impostor
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               ウォーロックは他のプレイヤーを呪うことができます。<br>
               呪われた人がほかのプレイヤーの隣にいる場合、呪われた人の隣にいるプレイヤーをキルできます。<br>
@@ -726,14 +744,14 @@
       </a>
       <a class="panel-block is-paddingless neutral column is-multiline" onclick="changeCardVisible(this)">
         <input readonly
-          class="button is-fullwidth has-text-left has-text-white has-background-warning-dark is-warning column is-full is-size-3-touch"
+          class="button is-fullwidth has-text-left has-text-white has-background-warning-dark is-warning column is-full is-size-3-touch is-size-4-tablet"
           value="Arsonist(放火魔)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag has-background-warning-dark has-text-white is-medium is-size-5-touch">
             Neutral
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               放火魔はタスクはありません。生きている全員に放火した場合に勝利できます。<br>
               放火を行うには、他のプレイヤーの隣で放火ボタンを押し、数秒間とどまる必要があります。<br>
@@ -744,14 +762,14 @@
       </a>
       <a class="panel-block is-paddingless neutral column is-multiline" onclick="changeCardVisible(this)">
         <input readonly
-          class="button is-fullwidth has-text-left has-text-white has-background-warning-dark is-warning column is-full is-size-3-touch"
+          class="button is-fullwidth has-text-left has-text-white has-background-warning-dark is-warning column is-full is-size-3-touch is-size-4-tablet"
           value="Jester(ジェスター)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag has-background-warning-dark has-text-white is-medium is-size-5-touch">
             Neutral
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               ジェスターはタスクはありません。会議中に投票で追放された場合に勝利できます。<br>
             </p>
@@ -760,14 +778,14 @@
       </a>
       <a class="panel-block is-paddingless neutral column is-multiline" onclick="changeCardVisible(this)">
         <input readonly
-          class="button is-fullwidth has-text-left has-text-white has-background-warning-dark is-warning column is-full is-size-3-touch"
+          class="button is-fullwidth has-text-left has-text-white has-background-warning-dark is-warning column is-full is-size-3-touch is-size-4-tablet"
           value="Jackal(ジャッカル)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag has-background-warning-dark has-text-white is-medium is-size-5-touch">
             Neutral
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               ジャッカルはタスクはありません。他のプレイヤーを全て排除することで勝利できます。<br>
               オプションでサイドキックが有効な場合、別のプレイヤーをサイドキックに指定することで、選ばれたプレイヤーはサイドキックになり、ジャッカル陣営になります。<br>
@@ -788,14 +806,14 @@
       </a>
       <a class="panel-block is-paddingless neutral column is-multiline" onclick="changeCardVisible(this)">
         <input readonly
-          class="button is-fullwidth has-text-left has-text-white has-background-warning-dark is-warning column is-full is-size-3-touch"
+          class="button is-fullwidth has-text-left has-text-white has-background-warning-dark is-warning column is-full is-size-3-touch is-size-4-tablet"
           value="Sidekick(サイドキック)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag has-background-warning-dark has-text-white is-medium is-size-5-touch">
             Neutral
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               サイドキックは、最初から割り当てられていることはなく、ゲーム中にジャッカルが能力を使用することで発生します。<br>
               サイドキックになったプレイヤーは、ジャッカルチームになり、全てのプレイヤーを排除することで勝利できます。<br>
@@ -816,14 +834,14 @@
       </a>
       <a class="panel-block is-paddingless secondary column is-multiline" onclick="changeCardVisible(this)">
         <input readonly
-          class="button is-fullwidth has-text-left has-text-white has-background-success-dark is-success column is-full is-size-3-touch"
+          class="button is-fullwidth has-text-left has-text-white has-background-success-dark is-success column is-full is-size-3-touch is-size-4-tablet"
           value="Lover(恋人)">
         </input>
         <div class="card column is-full" style="display: none;">
           <span class="tag has-background-success-dark  has-text-white is-medium is-size-5-touch">
             Secondary
           </span>
-          <div class="card-content is-size-3-touch">
+          <div class="card-content is-size-3-touch is-size-4-tablet">
             <p>
               恋人は必ず2人1組で生成されます。恋人は二人とも最後まで生き残ることで勝利できます。<br>
               オプション設定により、片方の恋人が死んだ場合、相方の恋人は自殺します。<br>
