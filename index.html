@@ -21,7 +21,7 @@
       </p>
       <ol class="content column is-11 pl-6 ml-3 is-size-3-touch is-size-4-tablet is-size-6-desktop">
         <li>
-          <a class="panel-block">クルーメイトミニが投票で追放される(全員敗北)</a>
+          <a class="panel-block">ミニ(クルー)が投票で追放される(全員敗北)</a>
         </li>
         <li>
           <a class="panel-block">ジェスターが投票で追放される(ジェスターソロ勝利)</a>
@@ -486,6 +486,30 @@
           </div>
         </div>
       </a>
+      <a class="panel-block is-paddingless crewmate column is-multiline " onclick="changeCardVisible(this)">
+        <input readonly
+          class="button is-fullwidth has-text-left is-info column is-full is-size-3-touch is-size-4-tablet is-size-6-desktop"
+          value="Medium(霊媒師)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag is-info is-medium is-size-5-touch">
+            Crewmate
+          </span>
+          <div class="card-content is-size-3-touch is-size-4-tablet is-size-6-desktop">
+            <p>
+              霊媒師は死んだプレイヤーの魂に質問できます。<br>
+              他のプレイヤーが死んだ場所に魂が残り、現場の位置が分かります。<br>
+              ミーティング後に魂の位置まで行くことで質問することができ、ランダムに選ばれた情報がチャットに記載されます。<br>
+              魂は、プレイヤーが死亡したターンから、2回目の会議が開催されたときに消えます。<br>
+            </p>
+            <div class="content is-marginless">
+              <ul class="has-text-weight-light">
+                <li>オプション設定で、魂が一度の質問で消えるかどうかを設定できます。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </a>
       <a class="panel-block is-paddingless impostor column is-multiline " onclick="changeCardVisible(this)">
         <input readonly
           class="button is-fullwidth has-text-left has-text-white has-background-danger-dark is-danger column is-full is-size-3-touch is-size-4-tablet is-size-6-desktop"
@@ -826,6 +850,23 @@
                 <li>サイドキックになったプレイヤーは、恋人の役職を除いて以前の役職とタスクを失います。</li>
               </ul>
             </div>
+          </div>
+        </div>
+      </a>
+      <a class="panel-block is-paddingless neutral column is-multiline" onclick="changeCardVisible(this)">
+        <input readonly
+          class="button is-fullwidth has-text-left has-text-white has-background-warning-dark is-warning column is-full is-size-3-touch is-size-4-tablet is-size-6-desktop"
+          value="Vulture(ハゲタカ)">
+        </input>
+        <div class="card column is-full" style="display: none;">
+          <span class="tag has-background-warning-dark has-text-white is-medium is-size-5-touch">
+            Neutral
+          </span>
+          <div class="card-content is-size-3-touch is-size-4-tablet is-size-6-desktop">
+            <p>
+              ハゲタカはタスクはありません。設定された数の死体を食べることで勝利できます。<br>
+              オプションによって、死体の位置を示す矢印を表示できます。<br>
+            </p>
           </div>
         </div>
       </a>
